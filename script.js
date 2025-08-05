@@ -22,3 +22,26 @@ function multiply(a, b) {
 function divide(a, b) {
     return a / b;
 }
+
+function operate(operator, firstOperand, secondOperand) {
+    let operatorFunction;
+
+    switch (operator) {
+        case ADD:
+            operatorFunction = add;
+            break;
+        case SUB:
+            operatorFunction = subtract;
+            break;
+        case MUL:
+            operatorFunction = multiply;
+            break;
+        case DIV:
+            operatorFunction = divide;
+            break;
+        default:
+            operatorFunction = add;
+    }
+
+    return operatorFunction(firstOperand, secondOperand);
+}
