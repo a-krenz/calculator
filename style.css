@@ -1,0 +1,19 @@
+body {
+    text-align: center;
+}
+
+button {
+    margin: 5px;
+}
+
+#calculator,
+#row {
+    display: flex;
+    justify-content: center;
+}
+
+#operators,
+#numpad {
+    display: flex;
+    flex-direction: column;
+}
