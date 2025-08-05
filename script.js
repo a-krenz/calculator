@@ -1,3 +1,7 @@
+let firstOperand;
+let secondOperand;
+let operator;
+
 function add(a, b) {
     return a + b;
 }
