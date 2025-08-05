@@ -3,10 +3,6 @@ const SUB = 1;
 const MUL = 2;
 const DIV = 3;
 
-let firstOperand;
-let secondOperand;
-let operator;
-
 function add(a, b) {
     return a + b;
 }
@@ -45,3 +41,21 @@ function operate(operator, firstOperand, secondOperand) {
 
     return operatorFunction(firstOperand, secondOperand);
 }
+
+function displayNumber(event) {
+    const target = event.target;
+    const number = target.classList[1];
+
+    display.textContent = display.textContent + number;
+}
+
+let firstOperand;
+let secondOperand;
+let operator;
+
+const display = document.querySelector("#display");
+
+const buttons = document.querySelectorAll(".num");
+buttons.forEach(
+    (button) => button.addEventListener("click", displayNumber)
+);
