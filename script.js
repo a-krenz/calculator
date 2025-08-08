@@ -84,6 +84,11 @@ function onNumberClick(event) {
 
 function onOperatorClick(event) {
     const target = event.target;
+
+    if (selectedOperator !== null) {
+        onEqualsClick();
+    }
+
     selectedOperator = +target.classList[1];
 
     entersSecondOperand = true;
@@ -91,7 +96,7 @@ function onOperatorClick(event) {
     displayTerm();
 }
 
-function onEqualsClick(event) {
+function onEqualsClick() {
     const result = operate(selectedOperator, firstOperand, secondOperand);
     display.textContent = result;
 
