@@ -16,10 +16,6 @@ button {
     justify-content: center;
 }
 
-.row {
-    justify-content: flex-end;
-}
-
 #operators,
 #numpad {
     display: flex;
@@ -27,8 +23,14 @@ button {
 }
 
 .num,
+.op,
 #equals,
-.op {
+#clear {
     width: 2.5rem;
     height: 2.5rem;
+}
+
+#clear {
+    font-size: 1.5rem;
+    font-weight: 500;
 }

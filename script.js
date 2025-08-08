@@ -117,6 +117,15 @@ function onEqualsClick() {
     entersSecondOperand = false;
 }
 
+function onClearClick() {
+    firstOperand = null;
+    secondOperand = null;
+    selectedOperator = null;
+    entersSecondOperand = null;
+
+    displayTerm();
+}
+
 
 let firstOperand = null;
 let secondOperand = null;
@@ -138,3 +147,6 @@ operators.forEach(
 
 const equalsButton = document.querySelector("#equals");
 equalsButton.addEventListener("click", onEqualsClick);
+
+const clearButton = document.querySelector("#clear");
+clearButton.addEventListener("click", onClearClick);
