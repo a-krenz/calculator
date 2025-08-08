@@ -7,9 +7,13 @@ button {
 }
 
 #calculator,
-#row {
+.row {
     display: flex;
     justify-content: center;
+}
+
+.row {
+    justify-content: flex-end;
 }
 
 #operators,
