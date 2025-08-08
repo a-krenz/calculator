@@ -74,9 +74,9 @@ function onNumberClick(event) {
     const number = +target.classList[1];
 
     if (!entersSecondOperand) {
-        firstOperand = `${firstOperand ?? ""}${number}`;
+        firstOperand = +`${firstOperand ?? ""}${number}`;
     } else {
-        secondOperand = `${secondOperand ?? ""}${number}`;
+        secondOperand = +`${secondOperand ?? ""}${number}`;
     }
 
     displayTerm();
@@ -92,6 +92,15 @@ function onOperatorClick(event) {
     displayTerm();
 }
 
+function onEqualsClick(event) {
+    const result = operate(selectedOperator, firstOperand, secondOperand);
+    display.textContent = result;
+
+    firstOperand = result;
+    secondOperand = null;
+    secondOperand = null;
+    entersSecondOperand = false;
+}
 
 
 let firstOperand = null;
@@ -111,3 +120,6 @@ const operators = document.querySelectorAll("#operators > *");
 operators.forEach(
     (operator) => operator.addEventListener("click", onOperatorClick)
 );
+
+const equalsButton = document.querySelector("#equals");
+equalsButton.addEventListener("click", onEqualsClick);
