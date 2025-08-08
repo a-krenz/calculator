@@ -1,9 +1,14 @@
 * {
     font-size: 2rem;
+    font-family: sans-serif;
 }
 
 body {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #D8E1E9;
 }
 
 button {
@@ -28,9 +33,31 @@ button {
 #clear {
     width: 2.5rem;
     height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #59708d;
+    background-color: #d5e6fb;
+    border-radius: 5px;
+    border: 2px solid #59708d;
 }
 
 #clear {
     font-size: 1.5rem;
     font-weight: 500;
+}
+
+#display {
+    height: 2.5rem;
+    min-width: 325px;
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: lightgray;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #59708d;
+    background-color: #C5D5EA;
+    border: 2px solid #59708d;
 }
