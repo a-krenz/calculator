@@ -51,13 +51,13 @@ function displayTerm() {
                 display.textContent += "+";
                 break;
             case SUB:
-                display.textContent += "-";
+                display.textContent += "−";
                 break;
             case MUL:
-                display.textContent += "*";
+                display.textContent += "×";
                 break;
             case DIV:
-                display.textContent += "/";
+                display.textContent += "÷";
                 break;
             default:
                 display.textContent += "+";
