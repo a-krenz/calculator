@@ -84,7 +84,6 @@ function onNumberClick(event) {
 
 function onOperatorClick(event) {
     const target = event.target;
-
     selectedOperator = +target.classList[1];
 
     entersSecondOperand = true;
