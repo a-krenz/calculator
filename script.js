@@ -4,19 +4,23 @@ const MUL = 2;
 const DIV = 3;
 
 function add(a, b) {
-    return a + b;
+    return round(a + b);
 }
 
 function subtract(a, b) {
-    return a - b;
+    return round(a - b);
 }
 
 function multiply(a, b) {
-    return a * b;
+    return round(a * b);
 }
 
 function divide(a, b) {
-    return a / b;
+    return round(a / b);
+}
+
+function round(num) {
+    return Math.round(num * 1000) / 1000;
 }
 
 function operate(operator, firstOperand, secondOperand) {
