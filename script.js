@@ -42,11 +42,44 @@ function operate(operator, firstOperand, secondOperand) {
     return operatorFunction(firstOperand, secondOperand);
 }
 
+function displayTerm() {
+    display.textContent = firstOperand ?? "";
+
+    if (selectedOperator !== null) {
+        switch (selectedOperator) {
+            case ADD:
+                display.textContent += "+";
+                break;
+            case SUB:
+                display.textContent += "-";
+                break;
+            case MUL:
+                display.textContent += "*";
+                break;
+            case DIV:
+                display.textContent += "/";
+                break;
+            default:
+                display.textContent += "+";
+
+
+        }
+    }
+
+    display.textContent += secondOperand ?? "";
+}
+
 function onNumberClick(event) {
     const target = event.target;
-    const number = target.classList[1];
+    const number = +target.classList[1];
 
-    display.textContent = display.textContent + number;
+    if (!entersSecondOperand) {
+        firstOperand = `${firstOperand ?? ""}${number}`;
+    } else {
+        secondOperand = `${secondOperand ?? ""}${number}`;
+    }
+
+    displayTerm();
 }
 
 function onOperatorClick(event) {
@@ -54,27 +87,18 @@ function onOperatorClick(event) {
 
     selectedOperator = +target.classList[1];
 
-    switch (selectedOperator) {
-        case ADD:
-            display.textContent += "+";
-            break;
-        case SUB:
-            display.textContent += "-";
-            break;
-        case MUL:
-            display.textContent += "*";
-            break;
-        case DIV:
-            display.textContent += "/";
-            break;
-        default:
-            display.textContent += "+";
-    }
+    entersSecondOperand = true;
+
+    displayTerm();
 }
+
+
 
 let firstOperand = null;
 let secondOperand = null;
 let selectedOperator = null;
+
+let entersSecondOperand = false;
 
 const display = document.querySelector("#display");
 
