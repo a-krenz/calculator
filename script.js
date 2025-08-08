@@ -100,6 +100,14 @@ function onOperatorClick(event) {
 }
 
 function onEqualsClick() {
+    if (
+        firstOperand === null ||
+        secondOperand === null ||
+        selectedOperator === null
+    ) {
+        return;
+    }
+
     const result = operate(selectedOperator, firstOperand, secondOperand);
     display.textContent = result;
 
