@@ -113,7 +113,7 @@ function onEqualsClick() {
 
     firstOperand = result;
     secondOperand = null;
-    secondOperand = null;
+    selectedOperator = null;
     entersSecondOperand = false;
 }
 
