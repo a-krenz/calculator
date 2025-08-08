@@ -42,20 +42,48 @@ function operate(operator, firstOperand, secondOperand) {
     return operatorFunction(firstOperand, secondOperand);
 }
 
-function displayNumber(event) {
+function onNumberClick(event) {
     const target = event.target;
     const number = target.classList[1];
 
     display.textContent = display.textContent + number;
 }
 
-let firstOperand;
-let secondOperand;
-let operator;
+function onOperatorClick(event) {
+    const target = event.target;
+
+    selectedOperator = +target.classList[1];
+
+    switch (selectedOperator) {
+        case ADD:
+            display.textContent += "+";
+            break;
+        case SUB:
+            display.textContent += "-";
+            break;
+        case MUL:
+            display.textContent += "*";
+            break;
+        case DIV:
+            display.textContent += "/";
+            break;
+        default:
+            display.textContent += "+";
+    }
+}
+
+let firstOperand = null;
+let secondOperand = null;
+let selectedOperator = null;
 
 const display = document.querySelector("#display");
 
 const buttons = document.querySelectorAll(".num");
 buttons.forEach(
-    (button) => button.addEventListener("click", displayNumber)
+    (button) => button.addEventListener("click", onNumberClick)
+);
+
+const operators = document.querySelectorAll("#operators > *");
+operators.forEach(
+    (operator) => operator.addEventListener("click", onOperatorClick)
 );
